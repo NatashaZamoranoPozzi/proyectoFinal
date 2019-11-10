@@ -2,11 +2,6 @@
 
 [DIGITALHOUSE] - ARCE 01
 
-
-* Vista de listado de productos
-* Vista del detalle de un producto
-* Vista del carrito de compra
-
 **Integrantes Proyecto Integrador**
 
 Nombre|Apellido|
