@@ -1,9 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Roboto&display=swap');
+
+
 :root {
-    --bg-color1: #E64A19;
+    --bg-color1: #fe7676;
+    
+    font-family: 'Roboto', sans-serif;
+}
+
+.ff_titulo {
+    font-family: 'Gochi Hand', cursive;
 }
 
 .bg-color1 {
     background-color: var(--bg-color1);
+}
+
+.color1 {
+    color: var(--bg-color1);
 }
 
 .navbar-dark .navbar-toggler {
@@ -19,7 +32,27 @@
     }
 }
 
-main > section {
-    padding: 3rem 0;
+.logo,
+.imagen_detalle {
+    border-radius: 50%;
+    border: 5px solid #eaeaea;
+    box-shadow: 3px 3px 8px #303030;
+}
+
+
+/* Detalle de Producto */
+
+/* Imagen Detalle de Producto */
+
+.imagen_detalle {
+    max-width: 50%;
+}
+
+/* Tarjeta de Productos */
+
+/* Imagen de Tarjeta  */
+
+.card img {
+    max-height: 200px;
 }
 
