@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Perfil - Sprint 1</title>
+    <title>Detalle Producto - Sprint 1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -16,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-color1">
             <div class="container">
-                <a class="navbar-brand ff_titulo" href="index.html">Cocole - VE</a>
+            <a class="navbar-brand ff_titulo" href="#">Cocole - VE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -24,13 +24,13 @@
     
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link text-white" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="faq.html">F.A.Q.</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="perfil.html">Perfil</a>
                     </li>
                     <li class="nav-item">
@@ -51,93 +51,53 @@
         </nav>
     </header>
 
-    <main class="pb-5">
+    <main>
         <section class="container">
+
+            
             <div class="row">
-                <div class="col-md-12 py-5">
-                    <h1 class="ff_titulo color1">Mi Perfil - Usuario</h1>
+                <div class="col-md-8 offset-md-2  py-5">
+                    
+                    
                     <div class="row">
-                        <div class="col-md-6">
+                            <div class="col-md-6 py-3 d-flex flex-md-column justify-content-center align-items-center">
+                                <h1 class="ff_titulo color1">MODELO 01</h1>
+                            </div>
+                            <div class="col-md-6 text-center py-3">
+                                    <img class="imagen_detalle img-fluid" src="img/cocolo_2.png" alt="Modelo 01">
+                            </div>
+                        </div>
+
+                    <div class="row">
+                        <div class="col-md-12 text-center mt-3">
+                            <p class="font-weight-bold">Detalle del Producto</p>
                             <hr class="bg-color1">
                         </div>
+                        <div class="col-md-12 text-justify">
+                            <strong>Descripción</strong>
+                            <p>Las pulseras se han convertido no sólo en un accesorio de belleza. Las pulseras son mucho más que eso; son un recuerdo de alguien del que sin duda te acordarás cada vez que te la pongas, una sensación de afecto, de ternura o de sensibilidad y estabilidad. Si eres amante de las pulseras y estás pensando en comprar alguna para hacer o hacerte un regalo, este es tu sitio!</p>
+                            <strong>Caracteristicas</strong>
+                            <ul>
+                                <li>Dimensiones</li>
+                                <li>Color</li>
+                                <li>Material</li>
+                                <li>Precio</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                                <a href="#" class="btn bg-dark text-white d-block">AGREGAR AL CARRITO</a>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
+        
 
-            <div class="row">
-                <div class="col-md-12">
-                    <h2>Nombre Completo</h2>
-                    
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-4 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                          Datos Usuario
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">Usuario</h5>
-                          <ul>
-                              <li>Telefono</li>
-                              <li>Email</li>
-                              <li>Clave</li>
-                              <li>Fecha de Creacion</li>
-                              <li>Ultima Sesión</li>
-                          </ul>
-                          
-                        </div>
-                      </div>
-                </div>
-                <div class="col-md-4 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                          Datos Envio
-                        </div>
-                        <div class="card-body">
-                          
-                          <p class="card-text">Lima 1111, Piso 1 - Capital Federal. Argentina</p>
-                          
-                        </div>
-                      </div>
-                </div>
-                <div class="col-md-4 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                          Mis Compras
-                        </div>
-                        <div class="card-body">
-                          <h5 class="card-title">Ultimas compras!</h5>
-                          <ul>
-                              <li>Modelo 01</li>
-                              <li>Modelo 10</li>
-                              <li>Modelo 01</li>
-                          </ul>
-                          <a href="#" class="btn bg-dark text-white">Ver Todas</a>
-                        </div>
-                      </div>
-                </div>
-                
-            </div>
-            <div class="row mt-3">
-                <div class="col-md-4 mt-3">
-                    <div class="card">
-                        <div class="card-header">
-                          Configuracion
-                        </div>
-                        <div class="card-body">
-                          <ul>
-                              <li>Ajustes y Privacidad</li>
-                              <li>Centro de Ayuda</li>
-                              <li>Idioma</li>
-                              <li><a href="#">Cerrar Sesión</a></li>
-                          </ul>
-                          
-                        </div>
-                      </div>
-                </div>
-            </div>
         </section>
+
+
     </main>
 
     <footer class="container-fluid bg-dark py-5 text-white mt-3">
@@ -170,6 +130,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 
 </html>
