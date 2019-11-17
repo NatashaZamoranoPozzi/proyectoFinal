@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
 
 :root {
     --bg-color1: #fe7676;
-    
-    font-family: 'Roboto', sans-serif;
+    /*aca quiero cambiar la fuente de todo lo que no sea titulos*/
+    font-family: 'Nunito', sans-serif;    
 }
 
 .ff_titulo {
@@ -20,9 +20,11 @@
 }
 
 .navbar-dark .navbar-toggler {
-
     border-color: #fff;
+    
 }
+
+
 
 
 @media screen and (min-width:575.98px){
@@ -30,6 +32,17 @@
         padding-left: 15px;
         padding-right: 15px;
     }
+}
+
+main {
+    background-image: url(../img/background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+#bienvenida {
+
 }
 
 .logo,
