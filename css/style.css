@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Gochi+Hand|Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
 :root {
     --bg-color1: #fe7676;
     /*aca quiero cambiar la fuente de todo lo que no sea titulos*/
-    font-family: 'Nunito', sans-serif;    
+    font-family: 'Quicksand', sans-serif; 
 }
 
 .ff_titulo {
@@ -40,10 +40,9 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
     
+    
 }
-#bienvenida {
 
-}
 
 .logo,
 .imagen_detalle {
@@ -67,5 +66,6 @@ main {
 
 .card img {
     max-height: 200px;
+    background-color: #303030;
 }
 
