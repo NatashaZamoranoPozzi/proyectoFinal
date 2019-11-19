@@ -3,6 +3,9 @@
 
 :root {
     --bg-color1: #fe7676;
+}
+
+body {
     /*aca quiero cambiar la fuente de todo lo que no sea titulos*/
     font-family: 'Quicksand', sans-serif;
 }
