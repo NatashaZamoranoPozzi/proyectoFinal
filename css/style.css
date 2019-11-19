@@ -27,10 +27,6 @@ body {
     
 }
 
-.carrito {
-    color: white;
-}
-
 .black-background {background-color:#fe7676;}
 .white {color:#ffffff;}
 
@@ -42,18 +38,16 @@ body {
     }
 }
 
-main {
+#bienvenida {
     background-image: url(../img/background.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; 
 }
 
-#main-productos{
-    background-image: url(../img/background.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; 
+
+.carousel-item{
+    max-height: 500px;
 }
 
 
