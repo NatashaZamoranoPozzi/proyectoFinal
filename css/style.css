@@ -27,10 +27,6 @@ body {
     
 }
 
-.black-background {background-color:#fe7676;}
-.white {color:#ffffff;}
-
-
 @media screen and (min-width:575.98px){
     nav.navbar .container {
         padding-left: 15px;
