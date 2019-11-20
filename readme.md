@@ -6,7 +6,7 @@
 
 Nombre|Apellido|
 :---|:---
-Natasha|Pozzi
+Natasha| Zamorano | Pozzi
 Ayrton|Lorente
 Leonardo|Lovera
 
