@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-color1">
             <div class="container">
@@ -18,29 +20,33 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="faq.php">F.A.Q.</a>
                     </li>
-                    <li class="nav-item">
+                    <?php if (isset($_SESSION["nombreUsuario"])) { ?>
+                        <li class="nav-item">
                         <a class="nav-link text-white" href="perfil.php">Perfil</a>
+                    <?php } ?>
+                    
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="contacto.php">Contacto</a>
                     </li>
-                    <?php if(!isset($_SESSION['email'])): ?>
-
+                    <?php if(!isset($_SESSION["nombreUsuario"])){ ?>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="registro.php">Registro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="login.php">Login</a>
                     </li>
-                    <?php endif ?>
+                    <?php } ?>
                     <li class="nav-item">
-                    <?php if(isset($_SESSION['email'])): ?>
+                    <?php if(isset($_SESSION["nombreUsuario"])){ ?>
                         <a class="nav-link text-white" href="partials/cerrar.php">Cerrar Sesión</a>
                     </li>
-                    <?php endif ?>
+                    <?php } ?>
                     
                 </ul>
+
                 <ul class="navbar-nav ml-auto">
+                <li><?php // echo $_SESSION["nombreUsuario"] ?></li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="carro-compra.php"><ion-icon name="cart" size=""></ion-icon></a>
                     </li>

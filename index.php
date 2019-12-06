@@ -31,17 +31,19 @@
                                     <img class="img-fluid logo" src="https://instagram.faep9-1.fna.fbcdn.net/vp/2ae8249ed6e76a4df5b5498871024f5b/5E5C3D6D/t51.2885-19/s150x150/62624376_2233291810094827_6461921087314722816_n.jpg?_nc_ht=instagram.faep9-1.fna.fbcdn.net" alt="Logo Principial">
                             </div>
                         </div>
-
+                        
                         <div class="row">
+                        <?// if(!isset($_SESSION["nombreUsuario"])){ ?>
                             <div class="col-md-6 text-center mt-3">
                                 <a class="btn bg-color1 text-white d-block" href="registro.php">Registro</a>
-                                
                             </div>
-                            <div class="col-md-6 text-center mt-3">
+                        <?//}?>
+                        <?// if(!isset($_SESSION["nombreUsuario"])){ ?>
+                        <div class="col-md-6 text-center mt-3">
                                 <a class="btn bg-color1 text-white d-block" href="login.php">Login</a>
                             </div>
                         </div>
-
+                        <?//}?>
                     </div>
                 </div>
             </div>
@@ -58,12 +60,12 @@
                                 <div class="col-md-4 text-center">
                                     <h3 class="my-4">ELEGÍ EL MODELO</h3>
                                    
-                                    <p> <a href="productos.html"><ion-icon class="color1"  name="gift" size="large"></ion-icon></a></p>
+                                    <p> <a href="productos.php"><ion-icon class="color1"  name="gift" size="large"></ion-icon></a></p>
                                     <p>Elegí el modelo que más te guste y agregalo al carrito. Podés elegir varios!!!</p>
                                 </div>
                                 <div class="col-md-4 text-center">
                                     <h3 class="my-4">REGISTRATE</h3>
-                                    <p><a href="registro.html"><ion-icon class="color1"  name="log-in" size="large"></ion-icon></a></p>
+                                    <p><a href="registro.php"><ion-icon class="color1"  name="log-in" size="large"></ion-icon></a></p>
                                     <p>Registrate para confirmar tu compra, el modo de envío y el pago</p>
                                 </div>
                                 <div class="col-md-4 text-center">

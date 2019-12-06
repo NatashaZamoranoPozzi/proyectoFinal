@@ -1,9 +1,3 @@
-<?php
-
-session_start(); 
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -36,25 +30,28 @@ session_start();
             </div>
 
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6">
                     <h2><?= (isset($_SESSION['nombreUsuario'])) ? $_SESSION['nombreUsuario'] : "" ?></h2>
-                    
+                 </div> 
+                 <!-- ESTO ES UN INTENTO DE HACER QUE SE VEA LA IMAGEN DEL USUARIO
+                <//?if (isset($_SESSION['nombreUsuario'])) { ?>
+                    <div class="col-md-6">
+                    <img src="img/<//?echo $_SESSION['nombreUsuario']."jpg"?>" alt="imagen del usuario">
                 </div>
+                <//? } ?>-->
+                
             </div>
             <div class="row mt-3">
                 <div class="col-md-4 mt-3">
                     <div class="card">
                         <div class="card-header">
-                          Datos Usuario
+                          Tus Datos 
                         </div>
                         <div class="card-body">
-                          <h5 class="card-title">Usuario</h5>
                           <ul>
-                              <li>Telefono</li>
-                              <li>Email</li>
-                              <li>Clave</li>
-                              <li>Fecha de Creacion</li>
-                              <li>Ultima Sesión</li>
+                              <li>Telefono: <?= (isset($_SESSION['telefonoUsuario'])) ? $_SESSION['telefonoUsuario'] : "" ?></li>
+                              <li>Email: <?= (isset($_SESSION['emailUsuario'])) ? $_SESSION['emailUsuario'] : "" ?></li>
+                              <li>Cambiar Clave</li>
                           </ul>
                           
                         </div>
@@ -63,7 +60,7 @@ session_start();
                 <div class="col-md-4 mt-3">
                     <div class="card">
                         <div class="card-header">
-                          Datos Envio
+                          Datos de Envio
                         </div>
                         <div class="card-body">
                           

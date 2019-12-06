@@ -22,3 +22,11 @@ function armarArrayUsuario(){
 
         return $creacionUsuario;
 }
+// INICIO DE SESIOM
+function iniciarSesion($usuario){
+    session_start();
+    $_SESSION['emailUsuario'] = $usuario['email'];
+    $_SESSION['nombreUsuario'] = $usuario['full_name'];
+    $_SESSION['telefonoUsuario'] = $usuario['telefono'];
+    $_SESSION['imagenUsuario'] = $usuario['ruta_imagen'];
+}

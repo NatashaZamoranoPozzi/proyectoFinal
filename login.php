@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 // Incluyo el archivo
 include 'controladores/controladorUsuario.php';
 include 'controladores/controladorValidacion.php';
@@ -25,14 +24,11 @@ if($_POST){
             // Pregunto si ya existe un usuario con ese email Identificador unico
             if ($usuario['email'] == $_POST['email']) {
                 if( password_verify($_POST['password'], $usuario['password']) ){
-                    session_start();
-                    $_SESSION['emailUsuario'] = $usuario['email'];
-                    $_SESSION['nombreUsuario'] = $usuario['full_name'];
-                    $_SESSION['telefonoUsuario'] = $usuario['telefono'];
-                    $_SESSION['imagenUsuario'] = $usuario['ruta_imagen'];
+                    iniciarSesion($usuario);
+                    //cookies recordarme
                     //if($_POST['recordarme'] == 'on'){
-                    //    setcookie("emailUsuario", $usuario['email'], time() + 60 * 60 * 24);
-                    //    setcookie("password", $usuario['password'], time() + 60 * 60 * 24);
+                    //    setcookie("emailUsuario", $usuario['email'], time() + 60 * 60 * 24 * 7);
+                    //    setcookie("password", $usuario['password'], time() + 60 * 60 * 24 *7);
                     //}
                     
                     header('location: perfil.php');
