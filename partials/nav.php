@@ -3,7 +3,7 @@
 <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-color1">
             <div class="container">
-            <a class="navbar-brand ff_titulo" href="index.html">Cocolo-ve</a>
+            <a class="navbar-brand ff_titulo" href="index.php">Cocolo-ve</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
