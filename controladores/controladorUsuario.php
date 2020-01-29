@@ -11,8 +11,8 @@ function traerUsuarios(){
 
 function armarArrayUsuario(){
         // Creo el usuario
-        $creacionUsuario = [
-            "full_name" => trim($_POST['nombre']),
+        $usuario = [
+            "nombre" => trim($_POST['nombre']),
             "email" => trim($_POST['email']),
             "password" => password_hash($_POST['password'], PASSWORD_DEFAULT),
             "telefono" => trim($_POST['tel']),
@@ -20,7 +20,7 @@ function armarArrayUsuario(){
 
         ];
 
-        return $creacionUsuario;
+        return $usuario;
 }
 // INICIO DE SESIOM
 function iniciarSesion($usuario){

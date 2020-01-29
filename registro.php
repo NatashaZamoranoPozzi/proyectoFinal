@@ -7,6 +7,8 @@ include 'controladores/controladorUsuario.php';
 include 'controladores/controladorValidacion.php';
 include_once 'partials/header.php';
 include_once 'partials/nav.php';
+require 'clases/Conexion.php';
+require 'clases/Usuario.php';
 
 
 $arrayDeErrores = "";
@@ -15,26 +17,36 @@ if($_POST){
     $arrayDeErrores = validarFormulario($_POST, 'registro');
     
     if(count($arrayDeErrores) == 0){
+
+        
+        $usuario = armarArrayUsuario($_POST);
+
+        $usuario = new Usuario();
+
+        $usuario->agregarUsuario($usuario);
+
+         
+
         
         // invoco la funcion traerUsuarios que retorna los usuarios en el JSON usuarios.json
-        $usuariosArray = traerUsuarios();
+        //$usuariosArray = traerUsuarios();
 
         // Creo el usuario con la funcion armarArrayUsuario
-        $creacionUsuario = armarArrayUsuario($_POST);
+       
 
         // Le inserto el nuevo usuario al array el ultima posicion de usuarios array
-        $usuariosArray[] = $creacionUsuario;
+        //$usuariosArray[] = $creacionUsuario;
 
         // Codifico el array de usuarios nuevo en un string en formato json
-        $formatoJson = json_encode($usuariosArray);
+        //$formatoJson = json_encode($usuariosArray);
 
         // Envio 
         // file_put_contents('usuarios.json', $formatoJson, PHP_EOL, FILE_APPEND);
-        file_put_contents('usuarios.json', $formatoJson);
+       // file_put_contents('usuarios.json', $formatoJson);
         
         // redireccionar al usuario si todo el registro estuvo OK
-        header('location: login.php');
-        exit;
+        //header('location: login.php');
+        //exit;
     }
 }
 
