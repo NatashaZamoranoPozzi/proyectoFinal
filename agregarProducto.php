@@ -1,7 +1,7 @@
 <?php  
 
 include_once 'clases/Conexion.php';
-include_once 'clases/Categoria.php';
+include_once 'clases/Producto.php';
 
 include_once 'controladores/controladorValidacion.php';
 
@@ -11,19 +11,19 @@ include_once 'partials/nav.php';
 $arrayDeErrores = "";
 
 if($_POST){
-    $arrayDeErrores = validarFormulario($_POST, 'categoria');
+    $arrayDeErrores = validarFormulario($_POST, 'Producto');
 
     if(count($arrayDeErrores) == 0){
         //echo "todo bien validado los campos del formulario";
-        $objCategoria = new Categoria;
-        $chequeo = $objCategoria->agregarCategoria();
+        $objProducto= new Producto;
+        $chequeo = $objProducto->agregarProducto();
         
         if( $chequeo ){
-            $mensaje = 'Categoria '.$objCategoria->getNombre();
+            $mensaje = 'Producto '.$objProducto->getNombre();
             $mensaje .= ' agregada correctamente a la base de datos.';
             $class = 'success';
         }else{
-            $mensaje = 'No se pudo agregar la Categoria a la base de datos';
+            $mensaje = 'No se pudo agregar el Producto a la base de datos';
             $class = 'danger';
         }
     }else{
@@ -44,11 +44,11 @@ if($_POST){
     <section class="container">
             <div class="row">
                 <div class="col-md-12 py-5">
-                    <h1 class="ff_titulo color1">Alta de una Categoria</h1>
+                    <h1 class="ff_titulo color1">Alta de una Producto</h1>
                     <div class="row">
                         <div class="col-md-6">
                             <hr class="bg-color1">
-                            <a href="adminCategorias.php" class="btn btn-outline-secondary">Volver al panel Categorias</a>
+                            <a href="adminProductos.php" class="btn btn-outline-secondary">Volver al panel Productos</a>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ if($_POST){
             <div class="row">
                 <div class="col-md-12">
                     <div class="alert alert-<?= (isset($class)) ? $class : "danger"; ?>">
-                        <?= (isset($mensaje)) ? $mensaje : "Ups no has enviado la categoria desde el formulario de alta" ; ?>
+                        <?= (isset($mensaje)) ? $mensaje : "Ups no has enviado el Producto desde el formulario de alta" ; ?>
                     </div>
                 </div>
             </div>

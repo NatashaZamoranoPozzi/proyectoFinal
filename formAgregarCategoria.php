@@ -1,6 +1,7 @@
 <?php  
 
-include 'controladores/controladorValidacion.php';
+include_once 'controladores/controladorValidacion.php';
+
 include_once 'partials/header.php';
 include_once 'partials/nav.php';
 

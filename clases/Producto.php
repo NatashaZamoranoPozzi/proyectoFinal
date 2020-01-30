@@ -13,8 +13,8 @@
         public function listarProductos()
         {
             $link = Conexion::conectar();
-            $sql = "SELECT idProducto, nombre
-                        FROM Productos";
+            $sql = "SELECT *
+                        FROM productos";
             $stmt = $link->prepare($sql);
             $stmt->execute();
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -32,23 +32,26 @@
             $precio = $_POST['precio'];
             $descripcion = $_POST['descripcion'];
             $estado = $_POST['estado'];
+            $idCategoria = $_POST['idCategoria'];
 
             $link = Conexion::conectar();
-            $sql = "INSERT INTO Productos (idProducto, nombre, precio, descripcion, estado) 
-                            VALUES (default, :nombre, :precio, :descrpcion, :estado)";
-           $query = $link->prepare($sql);
+            $sql = "INSERT INTO productos (nombre, precio, descripcion, estado, idCategoria) 
+                            VALUES (:nombre, :precio, :descripcion, :estado, :Categoria)";
+           $stmt = $link->prepare($sql);
                 
            $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-           $stmt->bindParam(':precio', $precio, PDO::PARAM_STR);
+           $stmt->bindParam(':precio', $precio, PDO::PARAM_INT);
            $stmt->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
-           $stmt->bindParam(':estado', $estado, PDO::PARAM_STR);
-
+           $stmt->bindParam(':estado', $estado, PDO::PARAM_INT);
+           $stmt->bindParam(':Categoria', $idCategoria, PDO::PARAM_INT);
+           
             if( $stmt->execute() ){
                 $this->setIdProducto($link->lastInsertId());
                 $this->setNombre($nombre);
                 $this->setPrecio($precio);
                 $this->setDescripcion($descripcion);
                 $this->setEstado($estado);
+                $this->setIdCategoria($idCategoria);
                 return true;
             }
             return false;
@@ -70,7 +73,7 @@
            
            $query->execute();
 
-
+        }
         /**
          * Get the value of idProducto
          */ 

@@ -26,6 +26,16 @@ class Categoria {
 
     }
 
+    public function listarCategorias() {
+        $link = Conexion::conectar();
+        $sql = "SELECT *
+                    FROM categorias";
+        $stmt = $link->prepare($sql);
+        $stmt->execute();
+        $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
+
     /**
      * Get the value of nombre
      */ 

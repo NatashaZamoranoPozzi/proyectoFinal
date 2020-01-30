@@ -32,6 +32,12 @@ include_once 'partials/nav.php';
             <a class="list-group-item list-group-item-action" href="adminProductos.php">
                 Panel de administración de Productos
             </a>
+            <a class="list-group-item list-group-item-action" href="adminUsuarios.php">
+                Panel de administración de Usuarios (falta)
+            </a>
+            <a class="list-group-item list-group-item-action" href="adminUsuarios.php">
+                Panel de administración de Pedidos (falta)
+            </a>
             
             
             </div>

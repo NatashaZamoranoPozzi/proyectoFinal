@@ -13,8 +13,8 @@
         public function listarUsuarios()
         {
             $link = Conexion::conectar();
-            $sql = "SELECT idUsuario, nombre
-                        FROM Usuarios";
+            $sql = "SELECT *
+                        FROM usuarios";
             $stmt = $link->prepare($sql);
             $stmt->execute();
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -29,16 +29,16 @@
         public function agregarUsuario()
         {
             $link = Conexion::conectar();
-            $sql = "INSERT INTO Usuarios (idUsuario, nombre, email, telefono, contrasena, imagen) 
-                            VALUES (default, :nombre, :email, :telefono, :contrasena, :imagen)";
-           $query = $link->prepare($sql);
-                $query->bindValue(":nombre", $usuario["nombre"], PDO::PARAM_STR);
-                $query->bindValue(":email", $usuario["email"], PDO::PARAM_STR);
-                $query->bindValue(":telefono", $usuario["telefono"], PDO::PARAM_STR);
-                $query->bindValue(":contrasena", $usuario["password"], PDO::PARAM_STR);
-                $query->bindValue(":imagen", $usuario["ruta_imagen"], PDO::PARAM_STR);
+            $sql = "INSERT INTO usuarios (nombre, email, telefono, contrasena, imagen) 
+                            VALUES (:nombre, :email, :telefono, :contrasena, :imagen)";
+           $stmt = $link->prepare($sql);
+                $stmt->bindValue(":nombre", $usuario["nombre"], PDO::PARAM_STR);
+                $stmt->bindValue(":email", $usuario["email"], PDO::PARAM_STR);
+                $stmt->bindValue(":telefono", $usuario["telefono"], PDO::PARAM_STR);
+                $stmt->bindValue(":contrasena", $usuario["password"], PDO::PARAM_STR);
+                $stmt->bindValue(":imagen", $usuario["ruta_imagen"], PDO::PARAM_STR);
 
-            if( $query->execute() ){
+            if( $stmt->execute() ){
                 $this->setIdUsuario($link->lastInsertId());
                 $this->setNombre($usuario["nombre"]);
                 $this->setEmail($usuario["email"]);
