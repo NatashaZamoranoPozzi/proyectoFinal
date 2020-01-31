@@ -36,6 +36,17 @@ class Categoria {
         return $resultado;
     }
 
+    public function verCategoriaId($id){
+        $link = Conexion::conectar();
+        $sql = "SELECT *
+                    FROM categorias WHERE idCategoria = :idCategoria";
+        $stmt = $link->prepare($sql);
+        $stmt->bindParam(':idCategoria', $idCategoria, PDO::PARAM_INT);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultado;
+    }
+
     /**
      * Get the value of nombre
      */ 

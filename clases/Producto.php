@@ -13,17 +13,23 @@
         public function listarProductos()
         {
             $link = Conexion::conectar();
-            $sql = "SELECT *
-                        FROM productos";
+            $sql = "SELECT p.*, c.nombre as categoria
+                        FROM productos as p, categorias as c WHERE c.idCategoria = p.idCategoria";
             $stmt = $link->prepare($sql);
             $stmt->execute();
             $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;
         }
 
-        public function verProductoPorID()
+        public function verProductoPorID($id)
         {
-            
+                $link = Conexion::conectar();
+                $sql = "SELECT *
+                                FROM productos WHERE idProducto = ". $id;
+                $stmt = $link->prepare($sql);
+                $stmt->execute();
+                $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+                return $resultado;
         }
 
         public function agregarProducto()
@@ -58,9 +64,39 @@
 
         }
 
-        public function modificarProducto()
+        public function modificarProducto($id)
         {
-            
+                $idProducto = $id;
+                $nombre = $_POST['nombre'];
+                $precio = $_POST['precio'];
+                $descripcion = $_POST['descripcion'];
+                $estado = $_POST['estado'];
+                $idCategoria = $_POST['idCategoria'];
+
+                $link = Conexion::conectar();
+                //, idProducto = LAST_INSERT_ID(idProducto)
+            $sql = "UPDATE productos SET nombre = :nombre, precio = :precio, descripcion = :descripcion, estado = :estado, idCategoria = :idCategoria  WHERE productos.idProducto = :idProducto ";
+            // UPDATE `productos` SET `descripcion` = 'A tu medida' WHERE `productos`.`idProducto` = 2
+           $stmt = $link->prepare($sql);
+           //
+           $stmt->bindParam(':idProducto', $idProducto, PDO::PARAM_INT);
+           $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+           $stmt->bindParam(':precio', $precio, PDO::PARAM_INT);
+           $stmt->bindParam(':descripcion', $descripcion, PDO::PARAM_STR);
+           $stmt->bindParam(':estado', $estado, PDO::PARAM_INT);
+           $stmt->bindParam(':idCategoria', $idCategoria, PDO::PARAM_INT);
+           //var_dump($sql);
+           //var_dump($stmt->execute());
+            if( $stmt->execute() ){
+                $this->setIdProducto($idProducto);
+                $this->setNombre($nombre);
+                $this->setPrecio($precio);
+                $this->setDescripcion($descripcion);
+                $this->setEstado($estado);
+                $this->setIdCategoria($idCategoria);
+                return true;
+            }
+            return false;
         }
 
         public function eliminarProducto()

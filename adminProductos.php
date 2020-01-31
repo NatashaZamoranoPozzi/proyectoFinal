@@ -2,6 +2,7 @@
 
 include_once 'clases/Conexion.php';
 include_once 'clases/Producto.php';
+include_once 'clases/Categoria.php';
 
 include_once 'partials/header.php';
 include_once 'partials/nav.php';
@@ -47,20 +48,22 @@ $Productos = $objProducto->listarProductos();
 
    
             foreach ( $Productos as $Producto  ){
-?>
+                
+?>  
             <tr>
                 <td><?= $Producto['idProducto']; ?></td>
                 <td><?= $Producto['nombre']; ?></td>
                 <td><?= $Producto['precio']; ?></td>
                 <td><?= $Producto['descripcion']; ?></td>
-                <td><?= $Producto['idCategoria']; ?></td>
+                <td><?= $Producto['categoria']; ?></td>
+                
                 <td>
-                    <a href="formModificarCategoriaProducto.php" class="btn btn-outline-secondary">
+                    <a href="formModificarProducto.php?id=<?= 'ass' ?>" class="btn btn-outline-secondary" >
                         modificar
                     </a>
                 </td>
                 <td>
-                    <a href="formEliminarProducto.php" class="btn btn-outline-secondary">
+                    <a href="formEliminarProducto.php?id=<?= $Producto['idProducto'] ?>" class="btn btn-outline-secondary">
                         eliminar
                     </a>
                 </td>
