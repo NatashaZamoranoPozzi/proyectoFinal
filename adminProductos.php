@@ -58,7 +58,7 @@ $Productos = $objProducto->listarProductos();
                 <td><?= $Producto['categoria']; ?></td>
                 
                 <td>
-                    <a href="formModificarProducto.php?id=<?= 'ass' ?>" class="btn btn-outline-secondary" >
+                    <a href="formModificarProducto.php?id=<?= $Producto['idProducto']; ?>" class="btn btn-outline-secondary" >
                         modificar
                     </a>
                 </td>
