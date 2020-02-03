@@ -101,14 +101,16 @@
 
         public function eliminarProducto()
         {
+            $id = $_POST['idProducto'];
             $link = Conexion::conectar();
-            $sql = "DELETE FROM Productos
-                            WHERE [:nombre = 'nombre']";
-            $query = $link->prepare($sql);
-            $query->bindValue(":nombre", $_POST['nombre']);
+            $sql = "DELETE FROM productos
+                            WHERE idProducto = :idProducto";
+            $stmt = $link->prepare($sql);
+            //var_dump($stmt);
+            $stmt->bindParam(':idProducto', $id, PDO::PARAM_INT);
            
-           $query->execute();
-
+            $resultado = $stmt->execute();
+            return $resultado;
         }
         /**
          * Get the value of idProducto

@@ -20,6 +20,7 @@ $arrayDeErrores = "";
                     <div class="row">
                         <div class="col-md-6">
                             <hr class="bg-color1">
+                            <a href="admin.php" class="btn btn-outline-secondary">Volver al panel principal</a>
                         </div>
                     </div>
                 </div>
