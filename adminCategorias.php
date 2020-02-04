@@ -47,14 +47,28 @@ $Categorias = $objCategoria->listarCategorias();
                 <td><?= $Categoria['idCategoria']; ?></td>
                 <td><?= $Categoria['nombre']; ?></td>
                 <td>
-                    <a href="formModificarCategoria.php" class="btn btn-outline-secondary">
-                        modificar
-                    </a>
+                <form action="formModificarCategoria.php" method="post">
+                <?php if($Categoria['nombre']) : $nameCategoria = $Categoria['nombre'];
+                    $idCategoria = $Categoria['idCategoria'];
+                ?>
+
+                    <input type="text" value="" name="<?=$idCategoria?>" class="form-control" style="display:none">
+                    <input type="submit" value="modificar" name="<?=$nameCategoria?>" class="btn btn-outline-secondary">
+                
+                <?php endif; ?>
+                </form>
                 </td>
                 <td>
-                    <a href="formEliminarCategoria.php" class="btn btn-outline-secondary">
-                        eliminar
-                    </a>
+                <form action="formEliminarCategoria.php" method="post">
+                <?php if($Categoria['nombre']) : $nameCategoria = $Categoria['nombre'];
+                    $idCategoria = $Categoria['idCategoria'];
+                ?>
+
+                    <input type="text" value="" name="<?=$idCategoria?>" class="form-control" style="display:none">
+                    <input type="submit" value="eliminar" name="<?=$nameCategoria?>" class="btn btn-outline-secondary">
+                
+                <?php endif; ?>
+                </form>
                 </td>
             </tr>
 <?php
