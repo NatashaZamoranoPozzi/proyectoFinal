@@ -41,9 +41,9 @@ function validarFormulario($unArray, $flag) {
                 if(count($usuariosArray) > 0){
                     // Recorro el array de usuarios
                     $contador = 0;
-                    foreach ($usuariosArray as $usuario) {
+                    foreach ($usuariosArray as $email) {
                         // Pregunto si consigue el email mostrar error datos incorrectos
-                        if($usuario['email'] != $unArray['email']){
+                        if($email != $unArray['email']){
                             $contador += 1;
                             
                                 if($contador >= count($usuariosArray)){
@@ -123,7 +123,20 @@ function validarFormulario($unArray, $flag) {
         
 /* 
         if(count($usuariosArray) > 0){
-            // Recorro el array de usuarios 
+            // Recorro el array de usuarios <?php  
+
+include_once 'clases/Conexion.php';
+include_once 'clases/Categoria.php';
+include_once 'clases/Producto.php';
+
+include_once 'controladores/controladorValidacion.php';
+
+include_once 'partials/header.php';
+include_once 'partials/nav.php';
+
+$arrayDeErrores = "";
+$objProducto= new Producto;
+$Producto = $objProducto->verProductoPorID($_GET['id']);
             foreach ($usuariosArray as $usuario) {
                 // Pregunto si ya existe un usuario con ese email Identificador unico
                 if($usuario['email'] == $unArray['email']){

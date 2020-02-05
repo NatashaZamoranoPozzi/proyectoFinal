@@ -7,7 +7,7 @@ include 'controladores/controladorUsuario.php';
 include 'controladores/controladorValidacion.php';
 include_once 'partials/header.php';
 include_once 'partials/nav.php';
-require 'clases/Conexion.php';
+//require 'clases/Conexion.php';
 require 'clases/Usuario.php';
 
 
@@ -21,10 +21,13 @@ if($_POST){
         
         $usuario = armarArrayUsuario($_POST);
 
-        $usuario = new Usuario();
+        $usuarioNuevo = new Usuario();
 
-        $usuario->agregarUsuario($usuario);
+        $usuarioNuevo->agregarUsuario($usuario);
 
+        // redireccionar al usuario si todo el registro estuvo OK
+        header('location: login.php');
+        exit;
          
 
         
@@ -44,9 +47,7 @@ if($_POST){
         // file_put_contents('usuarios.json', $formatoJson, PHP_EOL, FILE_APPEND);
        // file_put_contents('usuarios.json', $formatoJson);
         
-        // redireccionar al usuario si todo el registro estuvo OK
-        //header('location: login.php');
-        //exit;
+        
     }
 }
 

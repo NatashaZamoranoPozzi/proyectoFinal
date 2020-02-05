@@ -25,7 +25,7 @@ if($_POST){
         foreach ($usuariosArray as $usuario) {
             // Pregunto si ya existe un usuario con ese email Identificador unico
             if ($usuario['email'] == $_POST['email']) {
-                if( password_verify($_POST['password'], $usuario['password']) ){
+                if( password_verify($_POST['password'], $usuario['contrasena']) ){
                     iniciarSesion($usuario);
                     //cookies recordarme
                     //if($_POST['recordarme'] == 'on'){

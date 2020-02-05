@@ -1,12 +1,21 @@
 <?php
-
+require_once "clases\Conexion.php";
 function traerUsuarios(){
     // Obtener del Archivo JSON los Usuarios
-    $obtenerArchivo = file_get_contents('usuarios.json');
+    //$obtenerArchivo = file_get_contents('usuarios.json');
 
     // Decodificar el string del JSON a un array
-    $usuariosArray = json_decode($obtenerArchivo, true);
+    //$usuariosArray = json_decode($obtenerArchivo, true);
+    $link = Conexion::conectar();
+	$sql = "SELECT * FROM usuarios";
+	$stmt = $link->prepare($sql);
+	$stmt->execute();
+
+    $usuariosArray = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    //var_dump($usuariosArray);
+    
     return $usuariosArray;
+    
 }
 
 function armarArrayUsuario(){
@@ -22,7 +31,7 @@ function armarArrayUsuario(){
 
         return $usuario;
 }
-// INICIO DE SESIOM
+// INICIO DE SESION
 function iniciarSesion($usuario){
     session_start();
     $_SESSION['emailUsuario'] = $usuario['email'];

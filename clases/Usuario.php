@@ -1,5 +1,9 @@
 <?php
 
+require_once 'controladores\controladorValidacion.php';
+
+$usuario = armarArrayUsuario($_POST);
+
     class Usuario
     {
         private $idUsuario;
@@ -26,17 +30,17 @@
             
         }
 
-        public function agregarUsuario()
+        public function agregarUsuario($usuario)
         {
             $link = Conexion::conectar();
             $sql = "INSERT INTO usuarios (nombre, email, telefono, contrasena, imagen) 
                             VALUES (:nombre, :email, :telefono, :contrasena, :imagen)";
            $stmt = $link->prepare($sql);
-                $stmt->bindValue(":nombre", $usuario["nombre"], PDO::PARAM_STR);
-                $stmt->bindValue(":email", $usuario["email"], PDO::PARAM_STR);
-                $stmt->bindValue(":telefono", $usuario["telefono"], PDO::PARAM_STR);
-                $stmt->bindValue(":contrasena", $usuario["password"], PDO::PARAM_STR);
-                $stmt->bindValue(":imagen", $usuario["ruta_imagen"], PDO::PARAM_STR);
+               $stmt->bindValue(":nombre", $usuario["nombre"], PDO::PARAM_STR);
+               $stmt->bindValue(":email", $usuario["email"], PDO::PARAM_STR);
+               $stmt->bindValue(":telefono", $usuario["telefono"], PDO::PARAM_STR);
+               $stmt->bindValue(":contrasena", $usuario["password"], PDO::PARAM_STR);
+               $stmt->bindValue(":imagen", $usuario["ruta_imagen"], PDO::PARAM_STR);
 
             if( $stmt->execute() ){
                 $this->setIdUsuario($link->lastInsertId());

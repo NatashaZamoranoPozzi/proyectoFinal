@@ -12,7 +12,7 @@ include_once 'partials/nav.php';
 $arrayDeErrores = "";
 $objProducto= new Producto;
 $Producto = $objProducto->verProductoPorID($_GET['id']);
-var_dump($Producto);
+//var_dump($Producto);
 ?>
 
 <main class="pb-5">

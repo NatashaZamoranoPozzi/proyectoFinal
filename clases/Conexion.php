@@ -10,7 +10,7 @@
                 // Conexion a la base de datos utilizando PDO (clase predefinida en PHP) 
                 $link = new PDO(
                     'mysql:host=localhost;dbname=cocolo',
-                    'root',
+                    'root',                    
                     ''
                 );
                 // Sentencia que indica si tenemos errores en sql
@@ -19,8 +19,7 @@
                 $e->getMessage();
             }
             
-            
-            
+
             return $link;
         }
 
